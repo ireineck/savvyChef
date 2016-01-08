@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root controller: 'home', action: 'index'
+  
   get "/about", controller: 'home', action: 'about', as: 'about'
 
   get '/calculator', controller: 'home', action: 'calculator', as: 'calculator'
