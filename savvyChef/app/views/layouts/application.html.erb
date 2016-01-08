@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class = "container">
+	
+	 <nav>
+ 		 <%=link_to 'Home',  controller: 'home', action: 'index' %>
+ 		 <%=link_to 'About',  controller: 'home', action: 'about' %>
+ 		 <%=link_to 'Calculator',  controller: 'home', action: 'calculator' %>
+ 	 </nav>
+ 
+		<header>The Savvy Chef - Business Solutions for the Busy Chef</header>
+		
+		<section id = "content">
+		 <%= yield %>
 
-<%= yield %>
+		</section>
+		
+		<footer>
+    	<h4>Copyright <%=Date.today.year %> Savvy Chef</h4>
+    </footer>
+		
+	</div>
+
 
 </body>
 </html>
