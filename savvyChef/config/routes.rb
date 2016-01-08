@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :specials
   root controller: 'home', action: 'index'
   
   get "/about", controller: 'home', action: 'about', as: 'about'
