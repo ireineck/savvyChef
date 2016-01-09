@@ -14,8 +14,13 @@
  		 <%=link_to 'About',  controller: 'home', action: 'about' %>
  		 <%=link_to 'Calculator',  controller: 'home', action: 'calculator' %>
  		 <%=link_to 'Specials',  controller: 'specials', action: 'index' %>
-
- 	 </nav>
+	</nav>
+	
+	<% if notice %>
+		<div id = notice">
+			<%= notice %>
+		</div>
+	<% end %>
  
 		<header>The Savvy Chef - Business Solutions for the Busy Chef</header>
 		
