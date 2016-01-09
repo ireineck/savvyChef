@@ -1,19 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @special.title %>
-</p>
-
-<p>
-  <strong>Ingredients:</strong>
-  <%= @special.ingredients %>
-</p>
-
-<p>
-  <strong>Instructions:</strong>
-  <%= @special.instructions %>
-</p>
-
-<%= link_to 'Edit', edit_special_path(@special) %> |
-<%= link_to 'Back', specials_path %>
+<article>
+<hr>
+  <header>
+    <h2>
+      <%= @special.title %> [<%= link_to 'Edit', edit_special_path(@special) %>] 
+     </h2>
+  </header>
+  <h3>Ingredients:</h3>
+  <p><%= @special.ingredients %></p>
+  <h3>Instructions</h3>
+  <p><%= @special.instructions %></p>
+</article>
+<p><%= button_to 'Back', specials_path %></p>
+<hr>
