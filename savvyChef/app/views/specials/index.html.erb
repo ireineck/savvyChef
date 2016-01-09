@@ -15,7 +15,7 @@
   <tbody>
     <% @specials.each do |special| %>
     <tr>
-        <td><%= special.title %></td>   		  
+        <td><%=link_to special.title, special %></td>   		  
         <td><%= time_ago_in_words(special.updated_at) %> ago</td>       
      		<td><%= button_to 'Edit', edit_special_path(special) %></td>
         <td><%= button_to 'Delete', special, method: :delete, data: { confirm: 'Are you sure?' } %></td>
