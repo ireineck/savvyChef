@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title, size: "80x10" %>
+    <%= f.text_field :title, :maxlength => 150, size: "80x10" %>
   </div>
   <div class="field">
     <%= f.label :ingredients %><br>
