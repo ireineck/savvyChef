@@ -17,10 +17,9 @@
     <% @specials.each do |special| %>
     <tr>
         <td><%= special.title %></td>
-        <td><%= special.ingredients %></td>
-        <td><%= special.instructions %></td>
         <td><%= link_to 'Show', special %></td>
-        <td><%= link_to 'Edit', edit_special_path(special) %></td>
+   		  <td><%= time_ago_in_words(special.updated_at) %> ago</td>       
+     		<td><%= link_to 'Edit', edit_special_path(special) %></td>
         <td><%= link_to 'Destroy', special, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
