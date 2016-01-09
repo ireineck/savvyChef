@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, size: "80x10" %>
   </div>
   <div class="field">
     <%= f.label :ingredients %><br>
-    <%= f.text_area :ingredients %>
+    <%= f.text_area :ingredients, size: "80x11" %>
   </div>
   <div class="field">
     <%= f.label :instructions %><br>
-    <%= f.text_area :instructions %>
+    <%= f.text_area :instructions, size: "80x30"%>
   </div>
   <div class="actions">
     <%= f.submit %>
