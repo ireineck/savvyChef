@@ -21,7 +21,13 @@ class SpecialTest < ActiveSupport::TestCase
       assert !special.save # save should fail
       assert special.errors[:ingredients].include?("Can't be blank")
   end
-      
+
+  test "should not save unless instructions are filled in" do
+    special = Special.new
+    assert !special.save # save should fail
+    assert special.errors[:instructions].include?("Can't be blank")
+  end
+
 
 
   
