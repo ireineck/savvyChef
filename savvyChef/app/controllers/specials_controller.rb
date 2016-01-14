@@ -15,10 +15,12 @@ class SpecialsController < ApplicationController
   # GET /specials/new
   def new
     @special = Special.new
+    @categories =  Category.all.collect{|c| [c.name, c.id] }
   end
 
   # GET /specials/1/edit
   def edit
+      @categories = Category.all.collect{|c| [c.name, c.id] }
   end
 
   # POST /specials
@@ -69,6 +71,6 @@ class SpecialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def special_params
-      params.require(:special).permit(:title, :ingredients, :instructions)
+        params.require(:special).permit(:title, :ingredients, :instructions, :category_id)
     end
 end

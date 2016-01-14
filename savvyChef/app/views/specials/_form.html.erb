@@ -15,6 +15,12 @@
     <%= f.label :title %><br>
     <%= f.text_field :title, :maxlength => 150, size: "80x10" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.select :category_id, @categories, :include_blank => true %>
+  </div>
+  
   <div class="field">
     <%= f.label :ingredients %><br>
     <%= f.text_area :ingredients, size: "80x11" %>
@@ -23,7 +29,9 @@
     <%= f.label :instructions %><br>
     <%= f.text_area :instructions, size: "80x30"%>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>
