@@ -71,6 +71,6 @@ class SpecialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def special_params
-        params.require(:special).permit(:title, :ingredients, :instructions, :category_id)
+        params.require(:special).permit(:title, :category_id, :ingredients, :instructions)
     end
 end
