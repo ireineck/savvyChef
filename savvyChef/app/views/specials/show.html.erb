@@ -5,6 +5,8 @@
       <%= @special.title %> [<%= link_to 'Edit', edit_special_path(@special) %>] 
      </h2>
   </header>
+ <h3>Category:</h3> 
+ <p> <%= h(@special.category.name) rescue 'No category found' %></p>
   <h3>Ingredients:</h3>
   <p><%= @special.ingredients %></p>
   <h3>Instructions</h3>
