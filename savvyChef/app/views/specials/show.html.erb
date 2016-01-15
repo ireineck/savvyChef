@@ -9,10 +9,12 @@
  <p> <%= h(@special.category.name) rescue 'No category found' %></p>
  <h3>Price:</h3>
  <p> <%= @special.price %></p>
-  <h3>Ingredients:</h3>
-  <p><%= @special.ingredients %></p>
-  <h3>Instructions</h3>
-  <p><%= @special.instructions %></p>
+ <h3>Number Sold:</h3>
+ <p> <%= @special.numberSold %>
+ <h3>Ingredients:</h3>
+ <p><%= @special.ingredients %></p>
+ <h3>Instructions</h3>
+ <p><%= @special.instructions %></p>
 </article>
 <p><%= link_to 'Back', specials_path %></p>
 <hr>
