@@ -1,6 +1,6 @@
 class SpecialsController < ApplicationController
   before_action :get_categories, :only =>[:new, :edit, :create, :update]
-#  before_action :set_special, only: [:show, :edit, :update, :destroy]
+  before_action :set_special, only: [:show, :edit, :update, :destroy]
 
   # GET /specials
   # GET /specials.json
@@ -16,12 +16,11 @@ class SpecialsController < ApplicationController
   # GET /specials/new
   def new
     @special = Special.new
-    @categories =  Category.all.collect{|c| [c.name, c.id] }
   end
 
   # GET /specials/1/edit
   def edit
-      @categories = Category.all.collect{|c| [c.name, c.id] }
+
   end
 
   # POST /specials
@@ -78,5 +77,4 @@ class SpecialsController < ApplicationController
     def get_categories
         @categories = Category.all.collect{|c| [c.name, c.id]}
     end
-    
 end
