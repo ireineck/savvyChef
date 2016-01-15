@@ -1,5 +1,6 @@
 class SpecialsController < ApplicationController
-  before_action :set_special, only: [:show, :edit, :update, :destroy]
+  before_action :get_categories, :only =>[:new, :edit, :create, :update]
+#  before_action :set_special, only: [:show, :edit, :update, :destroy]
 
   # GET /specials
   # GET /specials.json
@@ -73,4 +74,9 @@ class SpecialsController < ApplicationController
     def special_params
         params.require(:special).permit(:title, :category_id, :ingredients, :instructions)
     end
+    
+    def get_categories
+        @categories = Category.all.collect{|c| [c.name, c.id]}
+    end
+    
 end
