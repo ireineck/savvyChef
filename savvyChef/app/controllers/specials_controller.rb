@@ -1,4 +1,5 @@
 class SpecialsController < ApplicationController
+  before_action :get_categories, :only =>[:new, :edit, :create, :update]
   before_action :set_special, only: [:show, :edit, :update, :destroy]
 
   # GET /specials
@@ -19,6 +20,7 @@ class SpecialsController < ApplicationController
 
   # GET /specials/1/edit
   def edit
+
   end
 
   # POST /specials
@@ -64,11 +66,15 @@ class SpecialsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_special
-      @special = Special.find(params[:id])
+        @special = Special.includes(:category).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def special_params
-      params.require(:special).permit(:title, :ingredients, :instructions)
+        params.require(:special).permit(:title, :category_id, :ingredients, :instructions, :price, :numberSold)
+    end
+    
+    def get_categories
+        @categories = Category.all.collect{|c| [c.name, c.id]}
     end
 end
