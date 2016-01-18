@@ -8,9 +8,15 @@
  <h3>Category:</h3> 
  <p> <%= h(@special.category.name) rescue 'No category found' %></p>
  <h3>Price:</h3>
- <p> $<%= @special.price %></p>
+ <p> <%= h(@special.price) rescue 'No data found' %></p>
+ <h3>Plate Cost</h3>
+ <p> <%= h(@special.plate_cost) rescue 'No data found' %></p>
  <h3>Number Sold:</h3>
- <p> <%= @special.numberSold %>
+ <p> <%= h(@special.numberSold) rescue 'No data found' %>
+ <h3>Gross Sales:</h3>
+ <p> <%= h(@special.numberSold * @special.price) rescue 'No data found' %></p>
+ <h3> Profit: </h3>
+ <p> <%=h ((@special.numberSold * @special.price) - (@special.numberSold * @special.plate_cost)) rescue 'No data found' %>
  <h3>Ingredients:</h3>
  <p><%= @special.ingredients %></p>
  <h3>Instructions</h3>

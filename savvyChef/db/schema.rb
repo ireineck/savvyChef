@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115033122) do
+ActiveRecord::Schema.define(version: 20160118025655) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160115033122) do
     t.integer  "category_id"
     t.decimal  "price"
     t.integer  "numberSold"
+    t.decimal  "plate_cost"
   end
 
   add_index "specials", ["category_id"], name: "index_specials_on_category_id"
