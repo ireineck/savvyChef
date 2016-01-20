@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-resources :specials, :category
+resources :specials
   root controller: 'home', action: 'index'
+  
+  get 'category', controller: 'category', action: 'index', as: 'category'
   
   get "/about", controller: 'home', action: 'about', as: 'about'
 
