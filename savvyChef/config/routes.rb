@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
 
-resources :specials
-  root controller: 'home', action: 'index'
-  
-  get 'category', controller: 'category', action: 'index', as: 'category'
-  
+resources :specials, :category
+
   get "/about", controller: 'home', action: 'about', as: 'about'
 
   get '/calculator', controller: 'home', action: 'calculator', as: 'calculator'
+
+  root controller: 'home', action: 'index'
   
-#  get '/category', controller: 'category', action: 'category' as: 'category'
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
