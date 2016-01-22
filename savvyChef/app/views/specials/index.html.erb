@@ -2,7 +2,7 @@
 
 <h1>Specials:</h1>
 <%= link_to 'New Special', new_special_path %>
-<%= link_to 'Category' , category_path %>
+<%= link_to 'Manage Categories', category_index_path %>
 
 <table>
   <thead>
@@ -22,8 +22,9 @@
         <td><%= special.category.name rescue "No category" %></td>  		  
         <td><%= time_ago_in_words(special.updated_at) %> ago</td>       
      		<td><%= button_to 'Edit', edit_special_path(special) %></td>
-        <td><%= button_to 'Delete', special, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= button_to 'Delete', special, method: :delete, data: { confirm:
+        'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
   
