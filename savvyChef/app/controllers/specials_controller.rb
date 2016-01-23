@@ -1,6 +1,8 @@
 class SpecialsController < ApplicationController
   before_action :get_categories, :only =>[:new, :edit, :create, :update]
   before_action :set_special, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, :except => [:index, :show]
+
 
   # GET /specials
   # GET /specials.json
